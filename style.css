@@ -6,11 +6,12 @@ body {
     display: flex;
     position: fixed;
     top: 0;
-    background-color: rgb(238,238,238);
+    background-color: rgb(180, 180, 180);
     width: 100%;
     height: 10%;
     justify-content: space-around;
     align-items: center;
+    z-index: 2;
 }
 header img {
     width: 20%;
@@ -24,13 +25,27 @@ nav a {
     font-weight: 700;
 }
 nav a:hover {
-    background-color: black;
+    background-color: orange;
     color: azure;
     border-radius: 5px;
 }
 
+@media (max-width: 768px) {
+    #header {
+        flex-wrap: wrap;
+    }
+}
+
+#email {
+    width: 50%;
+    max-width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+}
+
 main {
-    margin: 100px 220px;
+    margin: 100px 15%;
 }
 
 main form {
@@ -43,8 +58,16 @@ main form {
     margin-top: 10px;
     height: 30px;
     width: 150px;
-    background-color: orange;
+    background-color: rgb(236, 236, 73);
     border-radius: 5px;
+    border-style: none;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: orange;
+    transition-duration: 1500ms;
 }
 
 .feature-alignment {
@@ -60,44 +83,68 @@ main form {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .font-style {
+        display: none;
+    }
+    .feature-description {
+        min-width: 100%;
+    }
+}
+
 #how-it-works {
     margin-top: 50px;
     text-align: center;
+    z-index: 1;
 }
 
 #pricing {
     display: flex;
     margin-top: 50px;
-    justify-content: space-around;
+    justify-content: center;
+    /* flex-wrap: wrap; */
 }
 
 .pricing-card {
     border: 1px solid black;
-    width: 33.33%;
     border-radius: 5px;
+    width: 33%;
+    max-width: 280px;
     text-align: center;
-    margin: 20px;
+    margin: 10px;
+}
+
+@media (max-width: 900px) {
+    #pricing {
+        flex-wrap: wrap;
+    }
+    .pricing-card {
+        min-width: 285px;
+    }
 }
 
 .card-title {
-    background-color: rgba(230, 228, 228, 0.5);
+    background-color: rgba(180, 180, 180, 0.5);
     font-weight: 700;
     margin: 0;
-    height: 45px;
-    vertical-align: text-bottom;
+    padding: 15px;
+    height: 50px;
 }
 
 #pricing ul {
     list-style-type: none;
+    padding: 0;
 }
 
 #pricing button {
     width: 100px;
     height: 40px;
     border-style: none;
+    font-weight: 900;
     border-radius: 5px;
     margin: 10px;
-    background-color: yellow;
+    background-color: rgb(236, 236, 73);
+    cursor: pointer;
 }
 
 #pricing button:hover {
@@ -106,8 +153,9 @@ main form {
 }
 
 footer {
-    margin: 100px 220px 0 220px;
-    background-color: rgba(230, 228, 228, 0.5);
+    margin: 7.5% 15% 0 15%;
+    padding-bottom: 5px;
+    background-color: rgba(180, 180, 180, 0.5);
     text-align: right;
 }
 
